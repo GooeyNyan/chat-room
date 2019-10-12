@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>聊天室</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font: 13px Helvetica, Arial;
+      }
+      form {
+        background: #fff;
+        padding: 3px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-color: #000;
+        border-top-style: solid;
+        border-top-width: 1px;
+      }
+      form input {
+        border-style: solid;
+        border-width: 1px;
+        padding: 10px;
+        width: 85%;
+        margin-right: 0.5%;
+      }
+      form button {
+        width: 9%;
+        background: rgb(130, 224, 255);
+        border: none;
+        padding: 10px;
+        margin-left: 2%;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+      }
+      #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 0 100px 0;
+      }
+      #messages li {
+        padding: 5px 10px;
+      }
+      #messages li:nth-child(odd) {
+        background: #eee;
+      }
+    </style>
+    <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="/" method="POST" id="chatForm">
+      <input
+        id="message"
+        placeholder="Enter your message here"
+        autofocus="on"
+      />
+      <input name="file" id="file" type="file" />
+      <button id="send">Send</button>
+    </form>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
